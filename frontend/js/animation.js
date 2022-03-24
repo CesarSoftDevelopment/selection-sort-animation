@@ -9,7 +9,8 @@ let array = [8, 5, 2, 6, 9, 3, 1, 4, 0, 7];
 function shuffle(o) {
     for(var j, x, i = o.length; i; j = parseInt(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
     return o;
-    };
+};
+
     var numero_gerado = shuffle(array);
 
 btnDelete.onclick = function() {
@@ -17,7 +18,7 @@ btnDelete.onclick = function() {
 }
 
 function removeItem() {
-    let td = document.querySelectorAll('td');
+    let td = document.querySelectorAll('li');
 
     for(let i = 0; i <  td.length; i++){
         line.removeChild(td[i]);
@@ -25,7 +26,7 @@ function removeItem() {
 }
 
 btn.onclick = function() {
-       const td = document.createElement('td');
+       const td = document.createElement('li');
        td.innerHTML = numero_gerado;
        line.appendChild(td);
     }
@@ -33,7 +34,7 @@ btn.onclick = function() {
 
 btnSelectionSort.onclick = function() {
     removeItem();
-
+    
     function selectionSort(array) {
         for (let i = 0; i < array.length - 1; i++) {
       
@@ -47,7 +48,7 @@ btnSelectionSort.onclick = function() {
         }
        return array;
       }
-       const td = document.createElement('td');
+       const td = document.createElement('li');
         td.innerHTML = selectionSort(numero_gerado);
         line.appendChild(td);
     }
